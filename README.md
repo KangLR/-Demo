@@ -20,7 +20,7 @@
 
 http://localhost:8080/
 
-![image-20200322163152388](C:\Users\klr10\AppData\Roaming\Typora\typora-user-images\image-20200322163152388.png)
+![image-20200322163152388](https://github.com/KangLR/image/blob/master/image-20200322163152388.png)
 
 # 查看全部书籍
 
@@ -32,13 +32,13 @@ http://localhost:8080/book/allBook
 
 http://localhost:8080/book/toAddBookPage
 
-![image-20200322163309678](C:\Users\klr10\AppData\Roaming\Typora\typora-user-images\image-20200322163309678.png)
+![image-20200322163309678](https://github.com/KangLR/image/blob/master/image-20200322163309678.png)
 
 # 修改书籍
 
 http://localhost:8080/book/toUpdatePage/1
 
-![image-20200322163422001](C:\Users\klr10\AppData\Roaming\Typora\typora-user-images\image-20200322163422001.png)
+![image-20200322163422001](https://github.com/KangLR/image/blob/master/image-20200322163422001.png)
 
 # 删除书籍
 
@@ -50,7 +50,7 @@ http://localhost:8080/book/toUpdatePage/1
 - 与查看所有书籍复用页面
 - 书籍名为空时进行查询会重定向URL
 
-![image-20200322163617511](C:\Users\klr10\AppData\Roaming\Typora\typora-user-images\image-20200322163617511.png)
+![image-20200322163617511](https://github.com/KangLR/image/blob/master/image-20200322163617511.png)
 
 # 特点
 
