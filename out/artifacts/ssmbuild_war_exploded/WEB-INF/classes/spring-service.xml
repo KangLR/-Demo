@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        https://www.springframework.org/schema/tx/spring-tx.xsd">
+
+
+    <!--1.扫描service下的包，业务-->
+    <context:component-scan base-package="com.kang.service"/>
+
+    <!--2.将我们的所有业务类，注入到Spring，可以通过配置，或者注解实现
+
+    ref="bookMapper"的由来：我们在spring-dao.xml配置了dao层扫描包，自动把BookMapper的实现类注入到了Spring容器中，id=bookMapper
+
+    自动实现了getMapper（BookMapper.clss）生成对象
+
+    多了一个mapper实现类，因为要用spring要接管对象自动创建，mybatis时无法创建对象的
+    <bean id="userMapper" class="com.kang.mapper.UserMapperImpl">
+        <property name="sqlSession" ref="sqlSession"/>
+    </bean>
+    -->
+    <bean class="com.kang.service.BookServiceImpl" id="BookServiceImpl">
+        <property name="bookMapper" ref="bookMapper"/>
+    </bean>
+
+    <!--3.声明式事务:配置数据源
+    要横切事务的话，还要写aop的织入，导入aop的包
+    -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       <!--注入数据源-->
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+
+
+    <!--4.aop事务支持-->
+
+<!--    &lt;!&ndash;配置事务通知&ndash;&gt;-->
+<!--    <tx:advice id="txAdvice" transaction-manager="transactionManager">-->
+<!--        &lt;!&ndash;给那些方法配置事务&ndash;&gt;-->
+<!--        <tx:attributes>-->
+<!--            <tx:method name="*" propagation="REQUIRED"/>-->
+<!--        </tx:attributes>-->
+<!--    </tx:advice>-->
+
+<!--    &lt;!&ndash;配置事务切入&ndash;&gt;-->
+<!--    <aop:config>-->
+<!--        <aop:pointcut id="point" expression="execution(* com.kang.dao.*.*(..))"/>-->
+<!--        <aop:advisor advice-ref="txAdvice" pointcut-ref="point"/>-->
+<!--    </aop:config>-->
+
+</beans>

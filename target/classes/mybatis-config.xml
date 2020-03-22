@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+<!--    <settings>-->
+<!--        <setting name="logImpl" value="STDOUT_LOGGING"/>-->
+<!--    </settings>-->
+
+
+    <!--给包下的类取别名，别名=类名首字母小写-->
+    <typeAliases>
+        <package name="com.kang.pojo"/>
+    </typeAliases>
+
+    <!--
+        Mybatis本来要配置事务，数据源的，整合Spring之后，就可以交给Spring去做
+    -->
+
+    <!--两个名字一样，直接使用class-->
+    <mappers>
+        <mapper class="com.kang.dao.BookMapper"/>
+    </mappers>
+
+
+
+</configuration>
