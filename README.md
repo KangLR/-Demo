@@ -26,7 +26,7 @@ http://localhost:8080/
 
 http://localhost:8080/book/allBook
 
-![image-20200322163107982](image-20200322163107982.png)
+![image-20200322163107982](https://github.com/KangLR/image/blob/master/image-20200322163107982.png)
 
 # 新增书籍
 
